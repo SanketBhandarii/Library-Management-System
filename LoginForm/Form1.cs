@@ -1,3 +1,4 @@
+
 namespace LoginForm
 {
     public partial class Form1 : Form
@@ -58,9 +59,11 @@ namespace LoginForm
             }
             else
             {
-                MessageBox.Show("Login Successful!");
                 Username.Text = "";
                 Password.Text = "";
+                this.Hide();
+                Dashboard db = new Dashboard();
+                db.Show();
             }
         }
 

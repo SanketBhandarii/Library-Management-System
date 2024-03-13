@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AllInOne.Properties {
+namespace LoginForm.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace AllInOne.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AllInOne.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LoginForm.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,16 @@ namespace AllInOne.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_rafael_cosquiere_2041540 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-rafael-cosquiere-2041540", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
