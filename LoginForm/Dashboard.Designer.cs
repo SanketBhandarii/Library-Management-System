@@ -78,6 +78,7 @@
             addNewBookToolStripMenuItem.Name = "addNewBookToolStripMenuItem";
             addNewBookToolStripMenuItem.Size = new Size(254, 56);
             addNewBookToolStripMenuItem.Text = "Add New Book";
+            addNewBookToolStripMenuItem.Click += addNewBookToolStripMenuItem_Click;
             // 
             // viewBooksToolStripMenuItem
             // 
@@ -164,6 +165,7 @@
             Name = "Dashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
