@@ -54,7 +54,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.PaleTurquoise;
+            pictureBox1.BackColor = Color.DodgerBlue;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(-4, 84);
             pictureBox1.Name = "pictureBox1";
@@ -66,7 +66,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(59, 59, 59);
+            panel1.BackColor = Color.DarkSalmon;
             panel1.Controls.Add(label1);
             panel1.Location = new Point(-7, 0);
             panel1.Name = "panel1";
@@ -144,40 +144,45 @@
             // 
             textBox6.BorderStyle = BorderStyle.None;
             textBox6.Location = new Point(250, 315);
+            textBox6.Multiline = true;
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(163, 20);
+            textBox6.Size = new Size(163, 27);
             textBox6.TabIndex = 11;
             // 
             // textBox5
             // 
             textBox5.BorderStyle = BorderStyle.None;
             textBox5.Location = new Point(250, 262);
+            textBox5.Multiline = true;
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(163, 20);
+            textBox5.Size = new Size(163, 27);
             textBox5.TabIndex = 10;
             // 
             // textBox3
             // 
             textBox3.BorderStyle = BorderStyle.None;
             textBox3.Location = new Point(250, 142);
+            textBox3.Multiline = true;
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(163, 20);
+            textBox3.Size = new Size(163, 27);
             textBox3.TabIndex = 8;
             // 
             // textBox2
             // 
             textBox2.BorderStyle = BorderStyle.None;
             textBox2.Location = new Point(250, 81);
+            textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(163, 20);
+            textBox2.Size = new Size(163, 27);
             textBox2.TabIndex = 7;
             // 
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.Location = new Point(250, 28);
+            textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(163, 20);
+            textBox1.Size = new Size(163, 27);
             textBox1.TabIndex = 6;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
