@@ -37,7 +37,6 @@
             Password = new TextBox();
             checkBox1 = new CheckBox();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -114,7 +113,7 @@
             // 
             checkBox1.AutoSize = true;
             checkBox1.Cursor = Cursors.Hand;
-            checkBox1.Location = new Point(134, 351);
+            checkBox1.Location = new Point(134, 372);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(132, 24);
             checkBox1.TabIndex = 6;
@@ -125,12 +124,12 @@
             // 
             // textBox2
             // 
-            textBox2.BackColor = Color.DodgerBlue;
+            textBox2.BackColor = Color.MediumAquamarine;
             textBox2.BorderStyle = BorderStyle.None;
             textBox2.Cursor = Cursors.Hand;
             textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(48, 392);
+            textBox2.Location = new Point(48, 429);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
@@ -141,30 +140,12 @@
             textBox2.MouseClick += textBox2_MouseClick;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
-            // textBox3
-            // 
-            textBox3.BackColor = Color.MediumAquamarine;
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Cursor = Cursors.Hand;
-            textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            textBox3.ForeColor = Color.FloralWhite;
-            textBox3.Location = new Point(48, 441);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(218, 34);
-            textBox3.TabIndex = 8;
-            textBox3.Text = "Sign Up";
-            textBox3.TextAlign = HorizontalAlignment.Center;
-            textBox3.TextChanged += textBox3_TextChanged;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(250, 250, 250);
             ClientSize = new Size(329, 547);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(checkBox1);
             Controls.Add(label3);
@@ -177,6 +158,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -192,7 +174,6 @@
         public TextBox Password;
         private CheckBox checkBox1;
         public TextBox textBox2;
-        public TextBox textBox3;
     }
 }
 

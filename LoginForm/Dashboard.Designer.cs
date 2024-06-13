@@ -36,10 +36,10 @@
             studentToolStripMenuItem = new ToolStripMenuItem();
             addStudentToolStripMenuItem = new ToolStripMenuItem();
             viewStudentInfoToolStripMenuItem = new ToolStripMenuItem();
-            issueBookToolStripMenuItem = new ToolStripMenuItem();
-            returnBookToolStripMenuItem = new ToolStripMenuItem();
-            completeBookDetailsToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
+            informationToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem1 = new ToolStripMenuItem();
+            exitToolStripMenuItem2 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             menuStrip1.BackColor = Color.FromArgb(247, 250, 250);
             menuStrip1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { booksToolStripMenuItem, studentToolStripMenuItem, issueBookToolStripMenuItem, returnBookToolStripMenuItem, completeBookDetailsToolStripMenuItem, exitToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { booksToolStripMenuItem, studentToolStripMenuItem, exitToolStripMenuItem, informationToolStripMenuItem, exitToolStripMenuItem1, exitToolStripMenuItem2 });
             menuStrip1.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
@@ -76,7 +76,7 @@
             addNewBookToolStripMenuItem.ImageAlign = ContentAlignment.TopCenter;
             addNewBookToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             addNewBookToolStripMenuItem.Name = "addNewBookToolStripMenuItem";
-            addNewBookToolStripMenuItem.Size = new Size(254, 56);
+            addNewBookToolStripMenuItem.Size = new Size(252, 56);
             addNewBookToolStripMenuItem.Text = "Add New Book";
             addNewBookToolStripMenuItem.Click += addNewBookToolStripMenuItem_Click;
             // 
@@ -85,7 +85,7 @@
             viewBooksToolStripMenuItem.Image = (Image)resources.GetObject("viewBooksToolStripMenuItem.Image");
             viewBooksToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             viewBooksToolStripMenuItem.Name = "viewBooksToolStripMenuItem";
-            viewBooksToolStripMenuItem.Size = new Size(254, 56);
+            viewBooksToolStripMenuItem.Size = new Size(252, 56);
             viewBooksToolStripMenuItem.Text = "View Books";
             viewBooksToolStripMenuItem.Click += viewBooksToolStripMenuItem_Click;
             // 
@@ -106,6 +106,7 @@
             addStudentToolStripMenuItem.Name = "addStudentToolStripMenuItem";
             addStudentToolStripMenuItem.Size = new Size(278, 56);
             addStudentToolStripMenuItem.Text = "Add Student";
+            addStudentToolStripMenuItem.Click += addStudentToolStripMenuItem_Click;
             // 
             // viewStudentInfoToolStripMenuItem
             // 
@@ -114,34 +115,7 @@
             viewStudentInfoToolStripMenuItem.Name = "viewStudentInfoToolStripMenuItem";
             viewStudentInfoToolStripMenuItem.Size = new Size(278, 56);
             viewStudentInfoToolStripMenuItem.Text = "View Student Info";
-            // 
-            // issueBookToolStripMenuItem
-            // 
-            issueBookToolStripMenuItem.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            issueBookToolStripMenuItem.Image = (Image)resources.GetObject("issueBookToolStripMenuItem.Image");
-            issueBookToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            issueBookToolStripMenuItem.Name = "issueBookToolStripMenuItem";
-            issueBookToolStripMenuItem.Size = new Size(165, 54);
-            issueBookToolStripMenuItem.Text = "Issue Book";
-            // 
-            // returnBookToolStripMenuItem
-            // 
-            returnBookToolStripMenuItem.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            returnBookToolStripMenuItem.Image = (Image)resources.GetObject("returnBookToolStripMenuItem.Image");
-            returnBookToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            returnBookToolStripMenuItem.Name = "returnBookToolStripMenuItem";
-            returnBookToolStripMenuItem.Size = new Size(180, 54);
-            returnBookToolStripMenuItem.Text = "Return Book";
-            returnBookToolStripMenuItem.TextDirection = ToolStripTextDirection.Horizontal;
-            // 
-            // completeBookDetailsToolStripMenuItem
-            // 
-            completeBookDetailsToolStripMenuItem.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            completeBookDetailsToolStripMenuItem.Image = (Image)resources.GetObject("completeBookDetailsToolStripMenuItem.Image");
-            completeBookDetailsToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            completeBookDetailsToolStripMenuItem.Name = "completeBookDetailsToolStripMenuItem";
-            completeBookDetailsToolStripMenuItem.Size = new Size(266, 54);
-            completeBookDetailsToolStripMenuItem.Text = "Complete Book Details";
+            viewStudentInfoToolStripMenuItem.Click += viewStudentInfoToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
@@ -149,9 +123,39 @@
             exitToolStripMenuItem.Image = (Image)resources.GetObject("exitToolStripMenuItem.Image");
             exitToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(106, 54);
-            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Size = new Size(173, 54);
+            exitToolStripMenuItem.Text = "Issue Books";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
+            // informationToolStripMenuItem
+            // 
+            informationToolStripMenuItem.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            informationToolStripMenuItem.Image = (Image)resources.GetObject("informationToolStripMenuItem.Image");
+            informationToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            informationToolStripMenuItem.Name = "informationToolStripMenuItem";
+            informationToolStripMenuItem.Size = new Size(188, 54);
+            informationToolStripMenuItem.Text = "Return Books";
+            informationToolStripMenuItem.Click += informationToolStripMenuItem_Click;
+            // 
+            // exitToolStripMenuItem1
+            // 
+            exitToolStripMenuItem1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            exitToolStripMenuItem1.Image = (Image)resources.GetObject("exitToolStripMenuItem1.Image");
+            exitToolStripMenuItem1.ImageScaling = ToolStripItemImageScaling.None;
+            exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            exitToolStripMenuItem1.Size = new Size(258, 54);
+            exitToolStripMenuItem1.Text = "Complete Book Detail";
+            exitToolStripMenuItem1.Click += exitToolStripMenuItem1_Click;
+            // 
+            // exitToolStripMenuItem2
+            // 
+            exitToolStripMenuItem2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            exitToolStripMenuItem2.Image = (Image)resources.GetObject("exitToolStripMenuItem2.Image");
+            exitToolStripMenuItem2.ImageScaling = ToolStripItemImageScaling.None;
+            exitToolStripMenuItem2.Name = "exitToolStripMenuItem2";
+            exitToolStripMenuItem2.Size = new Size(106, 54);
+            exitToolStripMenuItem2.Text = "Exit";
+            exitToolStripMenuItem2.Click += exitToolStripMenuItem2_Click;
             // 
             // Dashboard
             // 
@@ -167,6 +171,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard";
             WindowState = FormWindowState.Maximized;
+            Load += Dashboard_Load_1;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -179,12 +184,12 @@
         private ToolStripMenuItem booksToolStripMenuItem;
         private ToolStripMenuItem addNewBookToolStripMenuItem;
         private ToolStripMenuItem viewBooksToolStripMenuItem;
-        private ToolStripMenuItem issueBookToolStripMenuItem;
-        private ToolStripMenuItem returnBookToolStripMenuItem;
-        private ToolStripMenuItem completeBookDetailsToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem studentToolStripMenuItem;
         private ToolStripMenuItem addStudentToolStripMenuItem;
         private ToolStripMenuItem viewStudentInfoToolStripMenuItem;
+        private ToolStripMenuItem informationToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem1;
+        private ToolStripMenuItem exitToolStripMenuItem2;
     }
 }

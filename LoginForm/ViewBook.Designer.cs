@@ -33,24 +33,24 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            SearchBox = new TextBox();
+            Refresh = new Button();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
-            button4 = new Button();
-            button3 = new Button();
+            Cancel = new Button();
+            Delete = new Button();
             Update = new Button();
-            textBox6 = new TextBox();
-            label8 = new Label();
-            textBox5 = new TextBox();
+            Bquantity = new TextBox();
+            bq = new Label();
+            Bprice = new TextBox();
             label7 = new Label();
             dateTimePicker1 = new DateTimePicker();
             label6 = new Label();
-            textBox4 = new TextBox();
+            Bpublication = new TextBox();
             label5 = new Label();
-            textBox3 = new TextBox();
+            Bauthor = new TextBox();
             label4 = new Label();
-            textBox2 = new TextBox();
+            Bname = new TextBox();
             label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -63,10 +63,11 @@
             panel1.BackColor = Color.White;
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(-2, -2);
+            panel1.Location = new Point(12, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(938, 123);
+            panel1.Size = new Size(989, 123);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // label1
             // 
@@ -74,7 +75,7 @@
             label1.BackColor = SystemColors.Window;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Highlight;
-            label1.Location = new Point(523, 52);
+            label1.Location = new Point(502, 53);
             label1.Name = "label1";
             label1.Size = new Size(128, 31);
             label1.TabIndex = 2;
@@ -84,7 +85,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(343, -14);
+            pictureBox1.Location = new Point(312, -15);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(249, 158);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -103,28 +104,30 @@
             label2.Text = "Book Name";
             label2.Click += label2_Click;
             // 
-            // textBox1
+            // SearchBox
             // 
-            textBox1.BackColor = SystemColors.ButtonHighlight;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(327, 147);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(275, 34);
-            textBox1.TabIndex = 2;
+            SearchBox.BackColor = SystemColors.ButtonHighlight;
+            SearchBox.BorderStyle = BorderStyle.None;
+            SearchBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SearchBox.Location = new Point(327, 147);
+            SearchBox.Multiline = true;
+            SearchBox.Name = "SearchBox";
+            SearchBox.Size = new Size(275, 34);
+            SearchBox.TabIndex = 2;
+            SearchBox.TextChanged += SearchBox_TextChanged;
             // 
-            // button1
+            // Refresh
             // 
-            button1.BackColor = Color.Cornsilk;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(625, 147);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 35);
-            button1.TabIndex = 3;
-            button1.Text = "Refresh";
-            button1.UseVisualStyleBackColor = false;
+            Refresh.BackColor = Color.Cornsilk;
+            Refresh.FlatStyle = FlatStyle.Popup;
+            Refresh.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Refresh.Location = new Point(625, 147);
+            Refresh.Name = "Refresh";
+            Refresh.Size = new Size(94, 35);
+            Refresh.TabIndex = 3;
+            Refresh.Text = "Refresh";
+            Refresh.UseVisualStyleBackColor = false;
+            Refresh.Click += Refresh_Click;
             // 
             // dataGridView1
             // 
@@ -132,52 +135,56 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 201);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(912, 291);
+            dataGridView1.Size = new Size(954, 298);
             dataGridView1.TabIndex = 4;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Gainsboro;
-            panel2.Controls.Add(button4);
-            panel2.Controls.Add(button3);
+            panel2.Controls.Add(Cancel);
+            panel2.Controls.Add(Delete);
             panel2.Controls.Add(Update);
-            panel2.Controls.Add(textBox6);
-            panel2.Controls.Add(label8);
-            panel2.Controls.Add(textBox5);
+            panel2.Controls.Add(Bquantity);
+            panel2.Controls.Add(bq);
+            panel2.Controls.Add(Bprice);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(dateTimePicker1);
             panel2.Controls.Add(label6);
-            panel2.Controls.Add(textBox4);
+            panel2.Controls.Add(Bpublication);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(Bauthor);
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(Bname);
             panel2.Controls.Add(label3);
-            panel2.Location = new Point(12, 498);
+            panel2.Location = new Point(12, 512);
             panel2.Name = "panel2";
-            panel2.Size = new Size(912, 312);
+            panel2.Size = new Size(954, 312);
             panel2.TabIndex = 5;
             // 
-            // button4
+            // Cancel
             // 
-            button4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(564, 220);
-            button4.Name = "button4";
-            button4.Size = new Size(103, 43);
-            button4.TabIndex = 15;
-            button4.Text = "Cancel";
-            button4.UseVisualStyleBackColor = true;
+            Cancel.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Cancel.Location = new Point(564, 220);
+            Cancel.Name = "Cancel";
+            Cancel.Size = new Size(103, 43);
+            Cancel.TabIndex = 15;
+            Cancel.Text = "Cancel";
+            Cancel.UseVisualStyleBackColor = true;
+            Cancel.Click += Cancel_Click;
             // 
-            // button3
+            // Delete
             // 
-            button3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(444, 220);
-            button3.Name = "button3";
-            button3.Size = new Size(103, 43);
-            button3.TabIndex = 14;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = true;
+            Delete.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Delete.Location = new Point(444, 220);
+            Delete.Name = "Delete";
+            Delete.Size = new Size(103, 43);
+            Delete.TabIndex = 14;
+            Delete.Text = "Delete";
+            Delete.UseVisualStyleBackColor = true;
+            Delete.Click += Delete_Click;
             // 
             // Update
             // 
@@ -190,33 +197,35 @@
             Update.UseVisualStyleBackColor = true;
             Update.Click += Update_Click;
             // 
-            // textBox6
+            // Bquantity
             // 
-            textBox6.BorderStyle = BorderStyle.None;
-            textBox6.Location = new Point(689, 148);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(178, 34);
-            textBox6.TabIndex = 12;
+            Bquantity.BorderStyle = BorderStyle.None;
+            Bquantity.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Bquantity.Location = new Point(689, 148);
+            Bquantity.Multiline = true;
+            Bquantity.Name = "Bquantity";
+            Bquantity.Size = new Size(178, 34);
+            Bquantity.TabIndex = 12;
             // 
-            // label8
+            // bq
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(488, 148);
-            label8.Name = "label8";
-            label8.Size = new Size(119, 28);
-            label8.TabIndex = 11;
-            label8.Text = "Book Name";
+            bq.AutoSize = true;
+            bq.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bq.Location = new Point(488, 148);
+            bq.Name = "bq";
+            bq.Size = new Size(143, 28);
+            bq.TabIndex = 11;
+            bq.Text = "Book Quantity";
             // 
-            // textBox5
+            // Bprice
             // 
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Location = new Point(689, 90);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(178, 34);
-            textBox5.TabIndex = 10;
+            Bprice.BorderStyle = BorderStyle.None;
+            Bprice.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Bprice.Location = new Point(689, 90);
+            Bprice.Multiline = true;
+            Bprice.Name = "Bprice";
+            Bprice.Size = new Size(178, 34);
+            Bprice.TabIndex = 10;
             // 
             // label7
             // 
@@ -230,9 +239,10 @@
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePicker1.Location = new Point(689, 40);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(178, 27);
+            dateTimePicker1.Size = new Size(191, 31);
             dateTimePicker1.TabIndex = 8;
             // 
             // label6
@@ -245,14 +255,15 @@
             label6.TabIndex = 6;
             label6.Text = "Book Purchase Date";
             // 
-            // textBox4
+            // Bpublication
             // 
-            textBox4.BorderStyle = BorderStyle.None;
-            textBox4.Location = new Point(227, 155);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(155, 34);
-            textBox4.TabIndex = 5;
+            Bpublication.BorderStyle = BorderStyle.None;
+            Bpublication.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Bpublication.Location = new Point(227, 155);
+            Bpublication.Multiline = true;
+            Bpublication.Name = "Bpublication";
+            Bpublication.Size = new Size(199, 34);
+            Bpublication.TabIndex = 5;
             // 
             // label5
             // 
@@ -264,14 +275,15 @@
             label5.TabIndex = 4;
             label5.Text = "Book Publication";
             // 
-            // textBox3
+            // Bauthor
             // 
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Location = new Point(227, 96);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(155, 34);
-            textBox3.TabIndex = 3;
+            Bauthor.BorderStyle = BorderStyle.None;
+            Bauthor.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Bauthor.Location = new Point(227, 96);
+            Bauthor.Multiline = true;
+            Bauthor.Name = "Bauthor";
+            Bauthor.Size = new Size(199, 34);
+            Bauthor.TabIndex = 3;
             // 
             // label4
             // 
@@ -283,14 +295,16 @@
             label4.TabIndex = 2;
             label4.Text = "Book Author";
             // 
-            // textBox2
+            // Bname
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Location = new Point(227, 39);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(155, 34);
-            textBox2.TabIndex = 1;
+            Bname.BorderStyle = BorderStyle.None;
+            Bname.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Bname.Location = new Point(227, 39);
+            Bname.Multiline = true;
+            Bname.Name = "Bname";
+            Bname.Size = new Size(199, 34);
+            Bname.TabIndex = 1;
+            Bname.TextChanged += Bname_TextChanged;
             // 
             // label3
             // 
@@ -308,11 +322,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.IndianRed;
-            ClientSize = new Size(954, 516);
+            ClientSize = new Size(1007, 509);
             Controls.Add(panel2);
             Controls.Add(dataGridView1);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(Refresh);
+            Controls.Add(SearchBox);
             Controls.Add(label2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -336,22 +350,22 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox SearchBox;
+        private Button Refresh;
         private DataGridView dataGridView1;
         private Panel panel2;
-        private TextBox textBox4;
+        private TextBox Bpublication;
         private Label label5;
-        private TextBox textBox3;
+        private TextBox Bauthor;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox Bname;
         private Label label3;
-        private Button button4;
-        private Button button3;
+        private Button Cancel;
+        private Button Delete;
         private Button Update;
-        private TextBox textBox6;
-        private Label label8;
-        private TextBox textBox5;
+        private TextBox Bquantity;
+        private Label bq;
+        private TextBox Bprice;
         private Label label7;
         private DateTimePicker dateTimePicker1;
         private Label label6;

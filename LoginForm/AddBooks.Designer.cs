@@ -34,13 +34,13 @@
             label1 = new Label();
             panel2 = new Panel();
             dateTimePicker1 = new DateTimePicker();
-            button2 = new Button();
-            button1 = new Button();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            Cancel = new Button();
+            Save = new Button();
+            BookQuantity = new TextBox();
+            BookPrice = new TextBox();
+            BPublication = new TextBox();
+            BAuthName = new TextBox();
+            BookName = new TextBox();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -54,15 +54,14 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.DodgerBlue;
+            pictureBox1.BackColor = Color.SkyBlue;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-4, 84);
+            pictureBox1.Location = new Point(-7, 126);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(321, 432);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.Size = new Size(329, 346);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel1
             // 
@@ -88,13 +87,13 @@
             // 
             panel2.BackColor = Color.FromArgb(240, 238, 213);
             panel2.Controls.Add(dateTimePicker1);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
-            panel2.Controls.Add(textBox6);
-            panel2.Controls.Add(textBox5);
-            panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(Cancel);
+            panel2.Controls.Add(Save);
+            panel2.Controls.Add(BookQuantity);
+            panel2.Controls.Add(BookPrice);
+            panel2.Controls.Add(BPublication);
+            panel2.Controls.Add(BAuthName);
+            panel2.Controls.Add(BookName);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label5);
@@ -105,86 +104,91 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(506, 432);
             panel2.TabIndex = 2;
-            panel2.Paint += panel2_Paint;
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePicker1.Location = new Point(250, 198);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(163, 27);
+            dateTimePicker1.Size = new Size(163, 31);
             dateTimePicker1.TabIndex = 14;
             // 
-            // button2
+            // Cancel
             // 
-            button2.BackColor = Color.MediumAquamarine;
-            button2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(242, 369);
-            button2.Name = "button2";
-            button2.Size = new Size(90, 38);
-            button2.TabIndex = 13;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            Cancel.BackColor = Color.MediumAquamarine;
+            Cancel.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Cancel.ForeColor = Color.White;
+            Cancel.Location = new Point(242, 369);
+            Cancel.Name = "Cancel";
+            Cancel.Size = new Size(90, 38);
+            Cancel.TabIndex = 13;
+            Cancel.Text = "Cancel";
+            Cancel.UseVisualStyleBackColor = false;
+            Cancel.Click += Cancel_Click;
             // 
-            // button1
+            // Save
             // 
-            button1.BackColor = Color.DodgerBlue;
-            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(142, 369);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 38);
-            button1.TabIndex = 12;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            Save.BackColor = Color.DodgerBlue;
+            Save.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Save.ForeColor = Color.White;
+            Save.Location = new Point(142, 369);
+            Save.Name = "Save";
+            Save.Size = new Size(94, 38);
+            Save.TabIndex = 12;
+            Save.Text = "Save";
+            Save.UseVisualStyleBackColor = false;
+            Save.Click += Save_Click;
             // 
-            // textBox6
+            // BookQuantity
             // 
-            textBox6.BorderStyle = BorderStyle.None;
-            textBox6.Location = new Point(250, 315);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(163, 27);
-            textBox6.TabIndex = 11;
+            BookQuantity.BorderStyle = BorderStyle.None;
+            BookQuantity.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BookQuantity.Location = new Point(250, 315);
+            BookQuantity.Multiline = true;
+            BookQuantity.Name = "BookQuantity";
+            BookQuantity.Size = new Size(163, 27);
+            BookQuantity.TabIndex = 11;
             // 
-            // textBox5
+            // BookPrice
             // 
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Location = new Point(250, 262);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(163, 27);
-            textBox5.TabIndex = 10;
+            BookPrice.BorderStyle = BorderStyle.None;
+            BookPrice.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BookPrice.Location = new Point(250, 262);
+            BookPrice.Multiline = true;
+            BookPrice.Name = "BookPrice";
+            BookPrice.Size = new Size(163, 27);
+            BookPrice.TabIndex = 10;
             // 
-            // textBox3
+            // BPublication
             // 
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Location = new Point(250, 142);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(163, 27);
-            textBox3.TabIndex = 8;
+            BPublication.BorderStyle = BorderStyle.None;
+            BPublication.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BPublication.Location = new Point(250, 142);
+            BPublication.Multiline = true;
+            BPublication.Name = "BPublication";
+            BPublication.Size = new Size(163, 27);
+            BPublication.TabIndex = 8;
             // 
-            // textBox2
+            // BAuthName
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Location = new Point(250, 81);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(163, 27);
-            textBox2.TabIndex = 7;
+            BAuthName.BorderStyle = BorderStyle.None;
+            BAuthName.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BAuthName.Location = new Point(250, 81);
+            BAuthName.Multiline = true;
+            BAuthName.Name = "BAuthName";
+            BAuthName.Size = new Size(163, 27);
+            BAuthName.TabIndex = 7;
             // 
-            // textBox1
+            // BookName
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(250, 28);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(163, 27);
-            textBox1.TabIndex = 6;
-            textBox1.TextChanged += textBox1_TextChanged;
+            BookName.BorderStyle = BorderStyle.None;
+            BookName.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BookName.Location = new Point(250, 28);
+            BookName.Multiline = true;
+            BookName.Name = "BookName";
+            BookName.Size = new Size(163, 27);
+            BookName.TabIndex = 6;
+            BookName.TextChanged += BookName_TextChanged;
             // 
             // label7
             // 
@@ -195,7 +199,6 @@
             label7.Size = new Size(143, 28);
             label7.TabIndex = 5;
             label7.Text = "Book Quantity";
-            label7.Click += label7_Click;
             // 
             // label6
             // 
@@ -216,7 +219,6 @@
             label5.Size = new Size(195, 28);
             label5.TabIndex = 3;
             label5.Text = "Book Purchase Date";
-            label5.Click += label5_Click;
             // 
             // label4
             // 
@@ -252,7 +254,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(230, 235, 235);
+            BackColor = Color.SkyBlue;
             ClientSize = new Size(820, 512);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -282,13 +284,13 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Button button2;
-        private Button button1;
+        private TextBox BookQuantity;
+        private TextBox BookPrice;
+        private TextBox BPublication;
+        private TextBox BAuthName;
+        private TextBox BookName;
+        private Button Cancel;
+        private Button Save;
         private DateTimePicker dateTimePicker1;
     }
 }

@@ -1,4 +1,4 @@
-
+using System.Data.SqlClient;
 namespace LoginForm
 {
     public partial class Form1 : Form
@@ -59,17 +59,20 @@ namespace LoginForm
             }
             else
             {
-                Username.Text = "";
-                Password.Text = "";
+                String ConnectionString = "data source = LAPTOP-79CO0EVV\\SQLEXPRESS06;DATABASE=LibraryManagementSystem;Integrated Security = True";
+                SqlConnection con = new SqlConnection(ConnectionString);
+                con.Open();
+                String username = Username.Text;
+                String password = Password.Text;
+                String query = "insert into loginTable (username, pass) values ('" + username + "', '" + password + "');";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("You're successfully logged in!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 Dashboard db = new Dashboard();
                 db.Show();
             }
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-           
         }
     }
 }
